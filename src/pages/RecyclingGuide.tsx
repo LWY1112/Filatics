@@ -161,7 +161,7 @@ const RecyclingGuide = () => {
                       transition={{ duration: 2, repeat: Infinity }}
                     >
                       <ArrowRight className="h-4 w-4 rotate-90" />
-                    </div>
+                    </motion.div>
                   </motion.div>
                 )}
               </motion.div>
