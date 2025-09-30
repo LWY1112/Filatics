@@ -36,7 +36,11 @@ const Navbar = () => {
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
               >
-                <Recycle className="h-8 w-8 text-emerald-600" />
+                <img 
+                  src="/Logo_edited_edited.png" 
+                  alt="Filatics Logo" 
+                  className="h-8 w-8 object-contain"
+                />
               </motion.div>
               <span className="text-2xl font-bold text-gray-900">Filatics</span>
             </Link>

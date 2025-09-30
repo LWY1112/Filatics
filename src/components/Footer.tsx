@@ -9,9 +9,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="bg-gradient-to-r from-emerald-500 to-blue-500 p-2 rounded-lg">
-                <Recycle className="h-6 w-6 text-white" />
-              </div>
+              <img 
+                src="/Logo_edited_edited.png" 
+                alt="Filatics Logo" 
+                className="h-10 w-10 object-contain"
+              />
               <span className="text-2xl font-bold">Filatics</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
