@@ -1,50 +1,58 @@
-import { CheckCircle, ArrowRight, Recycle, Package, Truck, Factory, AlertTriangle, Leaf } from 'lucide-react';
-import { motion } from 'framer-motion';
+// no import React from "react";
+import { CheckCircle, ArrowRight, Recycle, Package, Truck, Factory, Leaf } from "lucide-react";
+import { motion } from "framer-motion";
 
-const RecyclingGuide = () => {
+const RecyclingGuide: React.FC = () => {
   const preparationSteps = [
     {
       icon: <Package className="h-8 w-8" />,
-      title: 'Collect Bottles',
-      description: 'Gather PET plastic bottles from your home and community. Look for recycling code #1.',
-      tips: ['Water bottles', 'Soda bottles', 'Clear plastic containers', 'Remove caps and rings']
+      title: "Collect Bottles",
+      description:
+        "Gather PET plastic bottles from your home and community. Look for recycling code #1.",
+      tips: ["Water bottles", "Soda bottles", "Clear plastic containers", "Remove caps and rings"],
     },
     {
       icon: <CheckCircle className="h-8 w-8" />,
-      title: 'Clean & Prepare',
-      description: 'Rinse bottles and remove labels or caps to ensure they are ready for processing.',
-      tips: ['Rinse with clean water', 'Remove all labels', 'No soap residue', 'Air dry completely']
+      title: "Clean & Prepare",
+      description:
+        "Rinse bottles and remove labels or caps to ensure they are ready for processing.",
+      tips: ["Rinse with clean water", "Remove all labels", "No soap residue", "Air dry completely"],
     },
     {
       icon: <Truck className="h-8 w-8" />,
-      title: 'Drop Off or Arrange Pickup',
-      description: 'Deliver bottles to Filatics or schedule collection through our pickup service.',
-      tips: ['Minimum 10 bottles', 'Bundle in clear bags', 'Schedule via WhatsApp', 'Free pickup available']
+      title: "Drop Off or Arrange Pickup",
+      description:
+        "Deliver bottles to Filatics or schedule collection through our pickup service.",
+      tips: ["Minimum 10 bottles", "Bundle in clear bags", "Schedule via WhatsApp", "Free pickup available"],
     },
     {
       icon: <Factory className="h-8 w-8" />,
-      title: 'Processing',
-      description: 'Bottles are shredded and turned into filament using our Polyformer machine.',
-      tips: ['Industrial cleaning', 'Precision shredding', 'Quality testing', 'Filament production']
-    }
+      title: "Processing",
+      description:
+        "Bottles are shredded and turned into filament using our Polyformer machine.",
+      tips: ["Industrial cleaning", "Precision shredding", "Quality testing", "Filament production"],
+    },
   ];
 
   const impactPoints = [
     {
       icon: <Recycle className="h-8 w-8" />,
-      title: 'Reduce Pollution',
-      description: 'Every bottle recycled prevents plastic from ending up in landfills and oceans.'
+      title: "Reduce Pollution",
+      description:
+        "Every bottle recycled prevents plastic from ending up in landfills and oceans.",
     },
     {
       icon: <Factory className="h-8 w-8" />,
-      title: 'Support Innovation',
-      description: 'Your recycled bottles become high-quality filament for 3D printing projects.'
+      title: "Support Innovation",
+      description:
+        "Your recycled bottles become high-quality filament for 3D printing projects.",
     },
     {
       icon: <Leaf className="h-8 w-8" />,
-      title: 'Inspire Change',
-      description: 'Join a community movement that demonstrates sustainable living in action.'
-    }
+      title: "Inspire Change",
+      description:
+        "Join a community movement that demonstrates sustainable living in action.",
+    },
   ];
 
   return (
@@ -52,19 +60,19 @@ const RecyclingGuide = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-emerald-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1 
+          <motion.h1
             className="text-5xl font-bold text-gray-900 mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Why Recycle With 
+            Why Recycle With{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-blue-600">
-              {' '}Filatics?
+              Filatics?
             </span>
           </motion.h1>
-          
-          <motion.div 
+
+          <motion.div
             className="bg-red-50 border-l-4 border-red-500 p-8 mb-8 max-w-4xl mx-auto"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -75,7 +83,8 @@ const RecyclingGuide = () => {
               Kuala Lumpur alone generates over 30,000 tonnes of plastic bottle waste every year.
             </p>
             <p className="text-lg text-red-700">
-              With such a low recycling rate in Malaysia, every bottle you recycle can make a real difference.
+              With such a low recycling rate in Malaysia, every bottle you recycle can make a real
+              difference.
             </p>
           </motion.div>
         </div>
@@ -84,7 +93,7 @@ const RecyclingGuide = () => {
       {/* How to Recycle Guide */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -96,71 +105,130 @@ const RecyclingGuide = () => {
               Follow these easy steps to make sure your bottles are ready for recycling
             </p>
           </motion.div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {preparationSteps.map((step, index) => (
-              <motion.div 
-                key={index} 
-                className="relative"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              >
-                <motion.div 
-                  className="bg-gray-50 p-8 rounded-xl hover:bg-gray-100 transition-colors"
-                  whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-gradient-to-r from-emerald-500 to-blue-500 text-white p-3 rounded-lg flex-shrink-0">
-                      {step.icon}
+
+          {/* MOBILE: keep natural order 1↓2↓3↓4 */}
+          <div className="md:hidden grid grid-cols-1 gap-12">
+            {preparationSteps.map((step, index) => {
+              const isLast = index === preparationSteps.length - 1;
+              return (
+                <motion.div key={`m-${index}`} className="relative" initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}>
+                  <motion.div className="bg-gray-50 p-8 rounded-xl hover:bg-gray-100 transition-colors h-full"
+                    whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0,0,0,0.1)" }}>
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-gradient-to-r from-emerald-500 to-blue-500 text-white p-3 rounded-lg flex-shrink-0">
+                        {step.icon}
+                      </div>
+                      <div className="flex-grow">
+                        <h3 className="text-xl font-semibold text-gray-900 mb-3">{`${index + 1}. ${step.title}`}</h3>
+                        <p className="text-gray-600 mb-4">{step.description}</p>
+                        <ul className="space-y-1">
+                          {step.tips?.map((tip, t) => (
+                            <li key={t} className="flex items-center text-sm text-gray-500">
+                              <CheckCircle className="h-4 w-4 text-emerald-500 mr-2" /> {tip}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                    <div className="flex-grow">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-3">{step.title}</h3>
-                      <p className="text-gray-600 mb-4">{step.description}</p>
-                      <ul className="space-y-1">
-                        {step.tips.map((tip, tipIndex) => (
-                          <li key={tipIndex} className="flex items-center text-sm text-gray-500">
-                            <CheckCircle className="h-4 w-4 text-emerald-500 mr-2" />
-                            {tip}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </motion.div>
-                
-                {index < preparationSteps.length - 1 && (
-                  <motion.div 
-                    className={`hidden lg:block absolute ${
-                      index === 0 || index === 2 
-                        ? 'top-1/2 -right-8 transform -translate-y-1/2' 
-                        : '-bottom-8 left-1/2 transform -translate-x-1/2'
-                    }`}
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: index * 0.2 + 0.5 }}
-                    viewport={{ once: true }}
-                  >
-                    <motion.div 
-                      className="bg-emerald-500 text-white p-2 rounded-full"
-                      animate={index === 0 || index === 2 ? { x: [0, 5, 0] } : { y: [0, 5, 0] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    >
-                      <ArrowRight className={`h-4 w-4 ${index === 1 ? 'rotate-90' : ''}`} />
-                    </motion.div>
                   </motion.div>
-                )}
-              </motion.div>
-            ))}
+
+                  {!isLast && (
+                    <motion.div className="absolute -bottom-6 left-1/2 -translate-x-1/2"
+                      initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: index * 0.2 + 0.4 }} viewport={{ once: true }}>
+                      <motion.div className="bg-emerald-500 text-white p-2 rounded-full"
+                        animate={{ y: [0, 5, 0] }} transition={{ duration: 2, repeat: Infinity }}>
+                        <ArrowRight className="h-4 w-4 rotate-90" />
+                      </motion.div>
+                    </motion.div>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
+
+          {/* DESKTOP: swap 3 & 4 positions → layout [1,2] / [4,3] */}
+          <div className="hidden md:grid md:grid-cols-2 gap-12 relative">
+            {([0, 1, 3, 2] as const).map((logicalIndex, pos) => {
+              const step = preparationSteps[logicalIndex];
+              const isLastLogical = logicalIndex === preparationSteps.length - 1;
+
+              return (
+                <motion.div key={`d-${logicalIndex}`} className="relative" initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: logicalIndex * 0.2 }}
+                  viewport={{ once: true }}>
+                  <motion.div className="bg-gray-50 p-8 rounded-xl hover:bg-gray-100 transition-colors h-full"
+                    whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0,0,0,0.1)" }}>
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-gradient-to-r from-emerald-500 to-blue-500 text-white p-3 rounded-lg flex-shrink-0">
+                        {step.icon}
+                      </div>
+                      <div className="flex-grow">
+                        <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                          {`${logicalIndex + 1}. ${step.title}`}
+                        </h3>
+                        <p className="text-gray-600 mb-4">{step.description}</p>
+                        <ul className="space-y-1">
+                          {step.tips?.map((tip, t) => (
+                            <li key={t} className="flex items-center text-sm text-gray-500">
+                              <CheckCircle className="h-4 w-4 text-emerald-500 mr-2" /> {tip}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Zig-zag arrows for desktop with swapped layout */}
+                  {/* 1 → 2 */}
+                  {logicalIndex === 0 && (
+                    <motion.div className="absolute top-1/2 -right-6 -translate-y-1/2"
+                      initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.6 }} viewport={{ once: true }}>
+                      <motion.div className="bg-emerald-500 text-white p-2 rounded-full"
+                        animate={{ x: [0, 5, 0] }} transition={{ duration: 2, repeat: Infinity }}>
+                        <ArrowRight className="h-4 w-4" />
+                      </motion.div>
+                    </motion.div>
+                  )}
+
+                  {/* 2 ↓ 3 (3 is bottom-right because of swap) */}
+                  {logicalIndex === 1 && (
+                    <motion.div className="absolute -bottom-6 left-1/2 -translate-x-1/2"
+                      initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.8 }} viewport={{ once: true }}>
+                      <motion.div className="bg-emerald-500 text-white p-2 rounded-full"
+                        animate={{ y: [0, 5, 0] }} transition={{ duration: 2, repeat: Infinity }}>
+                        <ArrowRight className="h-4 w-4 rotate-90" />
+                      </motion.div>
+                    </motion.div>
+                  )}
+
+                  {/* 3 ← 4 (leftward from bottom-right back to bottom-left) */}
+                  {logicalIndex === 2 && (
+                    <motion.div className="absolute top-1/2 -left-6 -translate-y-1/2"
+                      initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 1.0 }} viewport={{ once: true }}>
+                      <motion.div className="bg-emerald-500 text-white p-2 rounded-full"
+                        animate={{ x: [0, -5, 0] }} transition={{ duration: 2, repeat: Infinity }}>
+                        <ArrowRight className="h-4 w-4 rotate-180" />
+                      </motion.div>
+                    </motion.div>
+                  )}
+                </motion.div>
+              );
+            })}
+          </div>
+
         </div>
       </section>
 
       {/* Impact Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -172,22 +240,19 @@ const RecyclingGuide = () => {
               The recycled filament is used in 3D printing, reducing plastic waste
             </p>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {impactPoints.map((point, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 className="bg-white p-8 rounded-xl shadow-lg text-center"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                whileHover={{ 
-                  y: -10,
-                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
-                }}
+                whileHover={{ y: -10, boxShadow: "0 25px 50px -12px rgba(0,0,0,0.25)" }}
                 viewport={{ once: true }}
               >
-                <motion.div 
+                <motion.div
                   className="bg-gradient-to-r from-emerald-500 to-blue-500 text-white p-4 rounded-full w-fit mx-auto mb-4"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
@@ -205,7 +270,7 @@ const RecyclingGuide = () => {
       {/* Why It Matters */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -213,18 +278,19 @@ const RecyclingGuide = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-8">Why It Matters</h2>
-            <motion.p 
+            <motion.p
               className="text-xl text-gray-600 max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              Every bottle recycled with Filatics helps reduce pollution, supports innovation, and inspires change.
+              Every bottle recycled with Filatics helps reduce pollution, supports innovation, and
+              inspires change.
             </motion.p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="bg-gradient-to-br from-emerald-50 to-blue-50 p-12 rounded-2xl text-center"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -252,7 +318,7 @@ const RecyclingGuide = () => {
       {/* Call to Action */}
       <section className="py-20 bg-gradient-to-r from-emerald-600 to-blue-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2 
+          <motion.h2
             className="text-4xl font-bold text-white mb-4"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -261,7 +327,7 @@ const RecyclingGuide = () => {
           >
             Ready to Start Recycling?
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-emerald-100 mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -270,8 +336,8 @@ const RecyclingGuide = () => {
           >
             Join thousands of eco-warriors who are making a difference, one bottle at a time
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl mb-8"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -296,8 +362,8 @@ const RecyclingGuide = () => {
               </div>
             </div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
