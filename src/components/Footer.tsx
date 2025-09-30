@@ -12,7 +12,7 @@ const Footer = () => {
               <img 
                 src="/Logo_edited_edited.png" 
                 alt="Filatics Logo" 
-                className="h-10 w-10 object-contain"
+                className="h-12 w-12 object-contain"
               />
               <span className="text-2xl font-bold">Filatics</span>
             </div>

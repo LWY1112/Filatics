@@ -12,10 +12,31 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You would typically send this to your backend or email service
-    alert('Thank you for your message! We\'ll get back to you soon.');
+    
+    // Create email content
+    const emailSubject = `Contact Form: ${formData.subject}`;
+    const emailBody = `
+Name: ${formData.name}
+Email: ${formData.email}
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+
+---
+Sent from Filatics website contact form
+    `.trim();
+    
+    // Create mailto link
+    const mailtoLink = `mailto:info@filatics.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show success message
+    alert('Thank you for your message! Your email client will open to send the message to info@filatics.com');
+    
+    // Reset form
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
@@ -249,7 +270,9 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Email</p>
-                    <p className="text-gray-600">info@filatics.com</p>
+                    <a href="mailto:info@filatics.com" className="text-gray-600 hover:text-emerald-600 transition-colors">
+                      info@filatics.com
+                    </a>
                   </div>
                 </div>
                 

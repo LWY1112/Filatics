@@ -39,7 +39,7 @@ const Navbar = () => {
                 <img 
                   src="/Logo_edited_edited.png" 
                   alt="Filatics Logo" 
-                  className="h-8 w-8 object-contain"
+                  className="h-10 w-10 object-contain"
                 />
               </motion.div>
               <span className="text-2xl font-bold text-gray-900">Filatics</span>

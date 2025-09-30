@@ -130,15 +130,36 @@ const RecyclingGuide = () => {
                   </div>
                 </motion.div>
                 
-                {index < preparationSteps.length - 1 && (
+                {index % 2 === 0 && index < preparationSteps.length - 1 && (
                   <motion.div 
-                    className="hidden lg:block absolute -bottom-4 left-1/2 transform -translate-x-1/2"
+                    className="hidden lg:block absolute top-1/2 -right-8 transform -translate-y-1/2"
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.2 + 0.5 }}
                     viewport={{ once: true }}
                   >
-                    <div className="bg-emerald-500 text-white p-2 rounded-full">
+                    <motion.div 
+                      className="bg-emerald-500 text-white p-2 rounded-full"
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      <ArrowRight className="h-4 w-4" />
+                    </motion.div>
+                  </motion.div>
+                )}
+                {index % 2 === 1 && index < preparationSteps.length - 1 && (
+                  <motion.div 
+                    className="hidden lg:block absolute -bottom-8 left-1/2 transform -translate-x-1/2"
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: index * 0.2 + 0.5 }}
+                    viewport={{ once: true }}
+                  >
+                    <motion.div 
+                      className="bg-emerald-500 text-white p-2 rounded-full"
+                      animate={{ y: [0, 5, 0] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
                       <ArrowRight className="h-4 w-4 rotate-90" />
                     </div>
                   </motion.div>
