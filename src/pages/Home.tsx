@@ -1,4 +1,4 @@
-import { ArrowRight, Recycle, Users, Zap, Award, ChevronDown } from 'lucide-react';
+import { ArrowRight, Recycle, Users, Zap, Award, ChevronDown, AlertTriangle, Leaf, Factory } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedCounter from '../components/AnimatedCounter';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -17,18 +17,23 @@ const Home = () => {
   const processSteps = [
     {
       icon: <Recycle className="h-8 w-8" />,
-      title: 'Collect Plastic Waste',
-      description: 'Gather plastic bottles and containers from your community'
+      title: 'Collect',
+      description: 'Gather clean plastic bottles from your community and home'
+    },
+    {
+      icon: <Factory className="h-8 w-8" />,
+      title: 'Process',
+      description: 'Bottles are cut into strips and prepared for transformation'
     },
     {
       icon: <Zap className="h-8 w-8" />,
-      title: 'Process & Transform',
-      description: 'Clean, shred, and convert plastic waste into high-quality filament'
+      title: 'Transform',
+      description: 'Our Polyformer machine converts strips into high-quality filament'
     },
     {
       icon: <Award className="h-8 w-8" />,
-      title: '3D Print Creation',
-      description: 'Use recycled filament to create new products and reduce waste'
+      title: 'Create Impact',
+      description: 'The recycled filament is used for sustainable innovation and 3D printing'
     }
   ];
 
@@ -36,7 +41,27 @@ const Home = () => {
     'EcoTech Solutions',
     'Green Future Fund', 
     'Sustainable Innovations',
-    'Planet First Initiative'
+    'Planet First Initiative',
+    'Innovation Hub KL',
+    'Green Tech Malaysia'
+  ];
+
+  const problems = [
+    {
+      icon: <AlertTriangle className="h-8 w-8" />,
+      title: 'Health Hazards',
+      description: 'Microplastics contaminate our food chain and water supply'
+    },
+    {
+      icon: <Leaf className="h-8 w-8" />,
+      title: 'Resource Depletion',
+      description: 'Natural resources are being exhausted to produce new plastics'
+    },
+    {
+      icon: <Factory className="h-8 w-8" />,
+      title: 'Climate Change',
+      description: 'Plastic production and waste contribute to greenhouse gas emissions'
+    }
   ];
 
   return (
@@ -88,7 +113,7 @@ const Home = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4 }}
                 >
-                  Transforming 
+                  Turning Plastic Waste Into 
                 </motion.span>
                 <motion.span 
                   className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-blue-600"
@@ -96,15 +121,7 @@ const Home = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.6, type: "spring" }}
                 >
-                  {' '}Waste
-                </motion.span>
-                <br />
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.8 }}
-                >
-                  into Wonder
+                  {' '}3D Printing Filament
                 </motion.span>
               </motion.h1>
               <motion.p 
@@ -113,8 +130,8 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Filatics converts plastic waste into high-quality 3D printing filament, 
-                creating a sustainable cycle that reduces pollution while empowering innovation.
+                Filatics is a green startup dedicated to fighting plastic pollution by transforming 
+                everyday waste into high-quality 3D printing filament. Join us in building a smarter, greener future.
               </motion.p>
               <motion.div 
                 className="flex flex-col sm:flex-row gap-4"
@@ -130,24 +147,13 @@ const Home = () => {
                     to="/recycling"
                     className="bg-emerald-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl"
                   >
-                    Start Recycling
+                    Recycle Now
                     <motion.div
                       animate={{ x: [0, 5, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
                     >
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </motion.div>
-                  </Link>
-                </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Link
-                    to="/workshops"
-                    className="border-2 border-emerald-600 text-emerald-600 px-8 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl"
-                  >
-                    Join Workshop
                   </Link>
                 </motion.div>
               </motion.div>
@@ -204,71 +210,73 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* Impact Statistics */}
-      <section className="py-16 bg-white relative overflow-hidden">
-        <motion.div
-          className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-blue-500"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 1.5 }}
-          viewport={{ once: true }}
-        />
+      {/* The Problem We're Solving */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
-            className="text-center mb-12"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <motion.h2 
-              className="text-3xl font-bold text-gray-900 mb-4"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              Our Environmental Impact
-            </motion.h2>
-            <motion.p 
-              className="text-gray-600 max-w-2xl mx-auto"
+            <h2 className="text-4xl font-bold text-gray-900 mb-8">The Problem We're Solving</h2>
+            
+            <div className="bg-red-50 border-l-4 border-red-500 p-8 mb-8 max-w-4xl mx-auto">
+              <motion.p 
+                className="text-2xl font-bold text-red-800 mb-4"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                "30,590 tonnes of plastic bottle waste are generated every year in Kuala Lumpur."
+              </motion.p>
+              <motion.p 
+                className="text-xl text-red-700"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                "Malaysia's recycling rate is just 32%, and shockingly, 81% of recycled plastic still ends up in landfills (WWF Malaysia, 2022)."
+              </motion.p>
+            </div>
+
+            <motion.h3 
+              className="text-2xl font-semibold text-gray-900 mb-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              See the positive change we're creating together in our communities and environment
-            </motion.p>
+              Why this matters: If no action is taken, it leads to:
+            </motion.h3>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { end: 12500, suffix: '+', label: 'Bottles Recycled', delay: 0.2 },
-              { end: 850, suffix: '+', label: 'Community Members', delay: 0.4 },
-              { end: 45, suffix: '+', label: 'Workshops Held', delay: 0.6 }
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50, scale: 0.8 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.6, delay: stat.delay }}
+            {problems.map((problem, index) => (
+              <motion.div 
+                key={index} 
+                className="bg-gray-50 p-8 rounded-xl text-center hover:bg-gray-100 transition-all duration-300"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
                 whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                  y: -10,
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
                 }}
                 viewport={{ once: true }}
-                className="text-center p-8 bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl cursor-pointer"
               >
-                <AnimatedCounter end={stat.end} suffix={stat.suffix} />
-                <motion.p 
-                  className="text-gray-600 mt-2 font-medium"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: stat.delay + 0.3 }}
-                  viewport={{ once: true }}
+                <motion.div 
+                  className="bg-red-100 text-red-600 p-4 rounded-full w-fit mx-auto mb-4"
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
                 >
-                  {stat.label}
-                </motion.p>
+                  {problem.icon}
+                </motion.div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{problem.title}</h3>
+                <p className="text-gray-600">{problem.description}</p>
               </motion.div>
             ))}
           </div>
@@ -299,7 +307,7 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              How Our Process Works
+              How It Works (Step-by-Step)
             </motion.h2>
             <motion.p 
               className="text-xl text-gray-600 max-w-3xl mx-auto"
@@ -308,11 +316,11 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              Our innovative three-step process transforms everyday plastic waste into valuable 3D printing material
+              Our innovative four-step process transforms everyday plastic waste into valuable 3D printing material
             </motion.p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
               <motion.div 
                 key={index} 
@@ -323,14 +331,14 @@ const Home = () => {
                 viewport={{ once: true }}
               >
                 <motion.div 
-                  className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 h-full"
+                  className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 h-full text-center"
                   whileHover={{ 
                     y: -10,
                     boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
                   }}
                 >
                   <motion.div 
-                    className="bg-gradient-to-r from-emerald-500 to-blue-500 text-white p-3 rounded-lg w-fit mb-4"
+                    className="bg-gradient-to-r from-emerald-500 to-blue-500 text-white p-4 rounded-full w-fit mx-auto mb-4"
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
                   >
@@ -357,7 +365,7 @@ const Home = () => {
                 </motion.div>
                 {index < processSteps.length - 1 && (
                   <motion.div 
-                    className="hidden md:block absolute top-12 -right-4 z-10"
+                    className="hidden lg:block absolute top-12 -right-4 z-10"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.2 + 0.6 }}
@@ -403,8 +411,15 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Sponsors & Partners */}
+      {/* Impact Statistics */}
       <section className="py-16 bg-white relative overflow-hidden">
+        <motion.div
+          className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-blue-500"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 1.5 }}
+          viewport={{ once: true }}
+        />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-12"
@@ -420,7 +435,71 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              Our Partners & Sponsors
+              Our Environmental Impact
+            </motion.h2>
+            <motion.p 
+              className="text-gray-600 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              See the positive change we're creating together in our communities and environment
+            </motion.p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { end: 10000, suffix: '+', label: 'Bottles Collected', delay: 0.2 },
+              { end: 20, suffix: '+', label: 'Workshops Hosted', delay: 0.4 },
+              { end: 500, suffix: '+', label: 'Community Members', delay: 0.6 }
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50, scale: 0.8 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.6, delay: stat.delay }}
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                viewport={{ once: true }}
+                className="text-center p-8 bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl cursor-pointer"
+              >
+                <AnimatedCounter end={stat.end} suffix={stat.suffix} />
+                <motion.p 
+                  className="text-gray-600 mt-2 font-medium"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: stat.delay + 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  {stat.label}
+                </motion.p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sponsors & Partners */}
+      <section className="py-16 bg-gray-50 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.h2 
+              className="text-3xl font-bold text-gray-900 mb-4"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              Trusted by the Greatest
             </motion.h2>
             <motion.p 
               className="text-gray-600"
@@ -433,11 +512,11 @@ const Home = () => {
             </motion.p>
           </motion.div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
             {sponsors.map((sponsor, index) => (
               <motion.div 
                 key={index} 
-                className="text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all duration-300 cursor-pointer"
+                className="text-center p-4 bg-white rounded-lg hover:bg-gray-50 transition-all duration-300 cursor-pointer"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -448,14 +527,14 @@ const Home = () => {
                 viewport={{ once: true }}
               >
                 <motion.div 
-                  className="h-16 w-16 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full mx-auto mb-3 flex items-center justify-center"
+                  className="h-12 w-12 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full mx-auto mb-2 flex items-center justify-center"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <span className="text-white font-bold text-lg">{sponsor.charAt(0)}</span>
+                  <span className="text-white font-bold text-sm">{sponsor.charAt(0)}</span>
                 </motion.div>
                 <motion.p 
-                  className="text-gray-700 font-medium"
+                  className="text-gray-700 font-medium text-xs"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: index * 0.1 + 0.3 }}
@@ -539,18 +618,18 @@ const Home = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <a
-                href="https://wa.me/1234567890"
+              <Link
+                to="/recycling"
                 className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-emerald-600 transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl"
               >
-                Contact via WhatsApp
+                Start Recycling Today
                 <motion.div
                   animate={{ x: [0, 5, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 >
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </motion.div>
-              </a>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
