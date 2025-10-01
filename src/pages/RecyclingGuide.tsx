@@ -371,7 +371,7 @@ const RecyclingGuide: React.FC = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <IconComponent className="mr-3 h-6 w-6" />
+                  
                   {button.text}
                   {button.icon === 'ArrowRight' && (
                     <IconComponent className="ml-3 h-6 w-6" />
