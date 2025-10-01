@@ -1,0 +1,73 @@
+import { 
+  AlertTriangle, 
+  ArrowRight, 
+  Award, 
+  Calendar, 
+  Camera, 
+  CheckCircle, 
+  Clock, 
+  ExternalLink, 
+  Eye, 
+  Facebook, 
+  Factory, 
+  Globe, 
+  Instagram, 
+  Leaf, 
+  Lightbulb, 
+  Linkedin, 
+  Mail, 
+  MapPin, 
+  MessageCircle, 
+  Package, 
+  Phone, 
+  Recycle, 
+  Send, 
+  Shield, 
+  Star, 
+  Target, 
+  Trophy, 
+  Truck, 
+  Twitter, 
+  Users, 
+  Zap 
+} from 'lucide-react';
+
+export const iconMap = {
+  AlertTriangle,
+  ArrowRight,
+  Award,
+  Calendar,
+  Camera,
+  CheckCircle,
+  Clock,
+  ExternalLink,
+  Eye,
+  Facebook,
+  Factory,
+  Globe,
+  Instagram,
+  Leaf,
+  Lightbulb,
+  Linkedin,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Package,
+  Phone,
+  Recycle,
+  Send,
+  Shield,
+  Star,
+  Target,
+  Trophy,
+  Truck,
+  Twitter,
+  Users,
+  Zap
+};
+
+export type IconName = keyof typeof iconMap;
+
+export const getIcon = (iconName: IconName) => {
+  return iconMap[iconName];
+};
