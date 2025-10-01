@@ -160,13 +160,13 @@ const Workshops = () => {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {workshopsData.workshopBenefits.benefits.map((benefit, index) => {
               const IconComponent = getIcon(benefit.icon as any);
               return (
                 <motion.div 
                   key={index}
-                  className="bg-white p-8 rounded-xl shadow-lg text-center"
+                  className="bg-white p-8 rounded-xl shadow-lg text-center w-full sm:w-80 max-w-sm"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -201,7 +201,7 @@ const Workshops = () => {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {workshopsData.pastWorkshops.workshops.map((workshop, index) => {
               const Calendar = getIcon('Calendar');
               const Users = getIcon('Users');
@@ -210,7 +210,7 @@ const Workshops = () => {
               return (
                 <motion.div 
                   key={index} 
-                  className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300"
+                  className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 w-full sm:w-96 max-w-md"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}

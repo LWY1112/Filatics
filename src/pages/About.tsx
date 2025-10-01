@@ -82,11 +82,11 @@ const About = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {aboutData.impactStats.map((stat, index) => (
               <motion.div 
                 key={index} 
-                className="text-center p-6 bg-white rounded-xl shadow-lg"
+                className="text-center p-6 bg-white rounded-xl shadow-lg w-full sm:w-48 max-w-xs"
                 initial={{ opacity: 0, y: 50, scale: 0.8 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -165,13 +165,13 @@ const About = () => {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {aboutData.coreValues.values.map((value, index) => {
               const IconComponent = getIcon(value.icon as any);
               return (
                 <motion.div 
                   key={index} 
-                  className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                  className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow w-full sm:w-80 max-w-sm"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -206,13 +206,13 @@ const About = () => {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {aboutData.awards.awards.map((award, index) => {
               const IconComponent = getIcon(award.icon as any);
               return (
                 <motion.div 
                   key={index} 
-                  className="bg-gradient-to-br from-emerald-50 to-blue-50 p-8 rounded-xl text-center hover:shadow-lg transition-all duration-300"
+                  className="bg-gradient-to-br from-emerald-50 to-blue-50 p-8 rounded-xl text-center hover:shadow-lg transition-all duration-300 w-full sm:w-80 max-w-sm"
                   initial={{ opacity: 0, y: 50, scale: 0.9 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}

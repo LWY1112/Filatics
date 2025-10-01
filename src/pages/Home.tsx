@@ -196,13 +196,13 @@ const Home = () => {
             </motion.h3>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {homeData.problemSection.problems.map((problem, index) => {
               const IconComponent = getIcon(problem.icon as any);
               return (
                 <motion.div 
                   key={index} 
-                  className="bg-gray-50 p-8 rounded-xl text-center hover:bg-gray-100 transition-all duration-300"
+                  className="bg-gray-50 p-8 rounded-xl text-center hover:bg-gray-100 transition-all duration-300 w-full sm:w-80 max-w-sm"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -265,14 +265,14 @@ const Home = () => {
             </motion.p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {homeData.howItWorks.steps.map((step, index) => {
               const IconComponent = getIcon(step.icon as any);
               const ArrowRight = getIcon('ArrowRight');
               return (
                 <motion.div 
                   key={index} 
-                  className="relative"
+                  className="relative w-full sm:w-64 max-w-sm"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -313,7 +313,7 @@ const Home = () => {
                   </motion.div>
                   {index < homeData.howItWorks.steps.length - 1 && (
                     <motion.div 
-                      className="hidden lg:block absolute top-12 -right-4 z-10"
+                      className="hidden lg:block absolute top-12 -right-8 z-10"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.2 + 0.6 }}
@@ -400,10 +400,11 @@ const Home = () => {
             </motion.p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {homeData.impactStats.stats.map((stat, index) => (
               <motion.div
                 key={index}
+                className="w-full sm:w-64 max-w-sm"
                 initial={{ opacity: 0, y: 50, scale: 0.8 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.6, delay: stat.value * 0.0001 }}
@@ -412,18 +413,19 @@ const Home = () => {
                   boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
                 }}
                 viewport={{ once: true }}
-                className="text-center p-8 bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl cursor-pointer"
               >
-                <AnimatedCounter end={stat.value} suffix={stat.suffix} />
-                <motion.p 
-                  className="text-gray-600 mt-2 font-medium"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: stat.value * 0.0001 + 0.3 }}
-                  viewport={{ once: true }}
-                >
-                  {stat.label}
-                </motion.p>
+                <div className="text-center p-8 bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl cursor-pointer h-full">
+                  <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                  <motion.p 
+                    className="text-gray-600 mt-2 font-medium"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: stat.value * 0.0001 + 0.3 }}
+                    viewport={{ once: true }}
+                  >
+                    {stat.label}
+                  </motion.p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -460,11 +462,11 @@ const Home = () => {
             </motion.p>
           </motion.div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
+          <div className="flex flex-wrap justify-center gap-6 items-center">
             {homeData.sponsors.partners.map((sponsor, index) => (
               <motion.div 
                 key={index} 
-                className="text-center p-4 bg-white rounded-lg hover:bg-gray-50 transition-all duration-300 cursor-pointer"
+                className="text-center p-4 bg-white rounded-lg hover:bg-gray-50 transition-all duration-300 cursor-pointer w-32"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}

@@ -237,13 +237,13 @@ const RecyclingGuide: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {recyclingData.impact.points.map((point, index) => {
               const IconComponent = getIcon(point.icon as any);
               return (
                 <motion.div
                   key={index}
-                  className="bg-white p-8 rounded-xl shadow-lg text-center"
+                  className="bg-white p-8 rounded-xl shadow-lg text-center w-full sm:w-80 max-w-sm"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -295,9 +295,9 @@ const RecyclingGuide: React.FC = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="flex flex-wrap justify-center gap-8">
               {recyclingData.whyItMatters.metrics.map((metric, index) => (
-                <div key={index}>
+                <div key={index} className="text-center min-w-48">
                   <div className="text-4xl font-bold text-emerald-600 mb-2">{metric.value}</div>
                   <div className="text-gray-600">{metric.description}</div>
                 </div>
@@ -336,11 +336,11 @@ const RecyclingGuide: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div className="flex flex-wrap justify-center gap-6 text-center">
               {recyclingData.callToAction.features.map((feature, index) => {
                 const IconComponent = getIcon(feature.icon as any);
                 return (
-                  <div key={index}>
+                  <div key={index} className="min-w-48">
                     <IconComponent className="h-12 w-12 text-white mx-auto mb-3" />
                     <h3 className="font-semibold text-white mb-2">{feature.title}</h3>
                     <p className="text-emerald-100 text-sm">{feature.description}</p>
