@@ -1,9 +1,8 @@
+import { ArrowRight, Recycle, Users, Zap, Award, ChevronDown, AlertTriangle, Leaf, Factory } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedCounter from '../components/AnimatedCounter';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { homeData } from '../data/homeData';
-import { getIcon } from '../utils/iconMapper';
 
 const Home = () => {
   const ref = useRef(null);
@@ -14,6 +13,56 @@ const Home = () => {
   
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
+  const processSteps = [
+    {
+      icon: <Recycle className="h-8 w-8" />,
+      title: 'Collect',
+      description: 'Gather clean plastic bottles from your community and home'
+    },
+    {
+      icon: <Factory className="h-8 w-8" />,
+      title: 'Process',
+      description: 'Bottles are cut into strips and prepared for transformation'
+    },
+    {
+      icon: <Zap className="h-8 w-8" />,
+      title: 'Transform',
+      description: 'Our Polyformer machine converts strips into high-quality filament'
+    },
+    {
+      icon: <Award className="h-8 w-8" />,
+      title: 'Create Impact',
+      description: 'The recycled filament is used for sustainable innovation and 3D printing'
+    }
+  ];
+
+  const sponsors = [
+    'EcoTech Solutions',
+    'Green Future Fund', 
+    'Sustainable Innovations',
+    'Planet First Initiative',
+    'Innovation Hub KL',
+    'Green Tech Malaysia'
+  ];
+
+  const problems = [
+    {
+      icon: <AlertTriangle className="h-8 w-8" />,
+      title: 'Health Hazards',
+      description: 'Microplastics contaminate our food chain and water supply'
+    },
+    {
+      icon: <Leaf className="h-8 w-8" />,
+      title: 'Resource Depletion',
+      description: 'Natural resources are being exhausted to produce new plastics'
+    },
+    {
+      icon: <Factory className="h-8 w-8" />,
+      title: 'Climate Change',
+      description: 'Plastic production and waste contribute to greenhouse gas emissions'
+    }
+  ];
 
   return (
     <div ref={ref} className="min-h-screen">
@@ -64,7 +113,7 @@ const Home = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4 }}
                 >
-                  {homeData.hero.title.split(' ').slice(0, -4).join(' ')}
+                  Turning Plastic Waste Into 
                 </motion.span>
                 <motion.span 
                   className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-blue-600"
@@ -72,7 +121,7 @@ const Home = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.6, type: "spring" }}
                 >
-                  {' '}{homeData.hero.title.split(' ').slice(-4).join(' ')}
+                  {' '}3D Printing Filament
                 </motion.span>
               </motion.h1>
               <motion.p 
@@ -81,7 +130,8 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                {homeData.hero.subtitle}
+                Filatics is a green startup dedicated to fighting plastic pollution by transforming 
+                everyday waste into high-quality 3D printing filament. Join us in building a smarter, greener future.
               </motion.p>
               <motion.div 
                 className="flex flex-col sm:flex-row gap-4"
@@ -94,18 +144,15 @@ const Home = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Link
-                    to={homeData.hero.buttonLink}
+                    to="/recycling"
                     className="bg-emerald-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl"
                   >
-                    {homeData.hero.buttonText}
+                    Recycle Now
                     <motion.div
                       animate={{ x: [0, 5, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
                     >
-                      {(() => {
-                        const ArrowRight = getIcon('ArrowRight');
-                        return <ArrowRight className="ml-2 h-5 w-5" />;
-                      })()}
+                      <ArrowRight className="ml-2 h-5 w-5" />
                     </motion.div>
                   </Link>
                 </motion.div>
@@ -123,8 +170,8 @@ const Home = () => {
                 className="relative"
               >
                 <img
-                  src={homeData.hero.heroImage}
-                  alt={homeData.hero.heroImageAlt}
+                  src="https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="3D Printing with Recycled Filament"
                   className="rounded-2xl shadow-2xl"
                 />
                 <motion.div
@@ -148,14 +195,19 @@ const Home = () => {
                 }}
                 className="absolute -top-4 -right-4 bg-white p-3 rounded-full shadow-lg"
               >
-                {(() => {
-                  const Recycle = getIcon('Recycle');
-                  return <Recycle className="h-6 w-6 text-emerald-600" />;
-                })()}
+                <Recycle className="h-6 w-6 text-emerald-600" />
               </motion.div>
             </motion.div>
           </div>
         </div>
+        
+        <motion.div 
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <ChevronDown className="h-8 w-8 text-gray-400" />
+        </motion.div>
       </section>
 
       {/* The Problem We're Solving */}
@@ -168,21 +220,27 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">{homeData.problemSection.title}</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-8">The Problem We're Solving</h2>
             
             <div className="bg-red-50 border-l-4 border-red-500 p-8 mb-8 max-w-4xl mx-auto">
-              {homeData.problemSection.statistics.map((stat, index) => (
-                <motion.p 
-                  key={index}
-                  className={`text-xl ${index === 0 ? 'font-bold text-red-800 mb-4' : 'text-red-700'}`}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  "{stat.text}"
-                </motion.p>
-              ))}
+              <motion.p 
+                className="text-2xl font-bold text-red-800 mb-4"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                "30,590 tonnes of plastic bottle waste are generated every year in Kuala Lumpur."
+              </motion.p>
+              <motion.p 
+                className="text-xl text-red-700"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                "Malaysia's recycling rate is just 32%, and shockingly, 81% of recycled plastic still ends up in landfills (WWF Malaysia, 2022)."
+              </motion.p>
             </div>
 
             <motion.h3 
@@ -192,38 +250,35 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              {homeData.problemSection.subtitle}
+              Why this matters: If no action is taken, it leads to:
             </motion.h3>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {homeData.problemSection.problems.map((problem, index) => {
-              const IconComponent = getIcon(problem.icon as any);
-              return (
+            {problems.map((problem, index) => (
+              <motion.div 
+                key={index} 
+                className="bg-gray-50 p-8 rounded-xl text-center hover:bg-gray-100 transition-all duration-300"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                whileHover={{ 
+                  y: -10,
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                }}
+                viewport={{ once: true }}
+              >
                 <motion.div 
-                  key={index} 
-                  className="bg-gray-50 p-8 rounded-xl text-center hover:bg-gray-100 transition-all duration-300"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  whileHover={{ 
-                    y: -10,
-                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
-                  }}
-                  viewport={{ once: true }}
+                  className="bg-red-100 text-red-600 p-4 rounded-full w-fit mx-auto mb-4"
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
                 >
-                  <motion.div 
-                    className="bg-red-100 text-red-600 p-4 rounded-full w-fit mx-auto mb-4"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <IconComponent className="h-8 w-8" />
-                  </motion.div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{problem.title}</h3>
-                  <p className="text-gray-600">{problem.description}</p>
+                  {problem.icon}
                 </motion.div>
-              );
-            })}
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{problem.title}</h3>
+                <p className="text-gray-600">{problem.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -252,7 +307,7 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              {homeData.howItWorks.title}
+              How It Works (Step-by-Step)
             </motion.h2>
             <motion.p 
               className="text-xl text-gray-600 max-w-3xl mx-auto"
@@ -261,75 +316,71 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              {homeData.howItWorks.subtitle}
+              Our innovative four-step process transforms everyday plastic waste into valuable 3D printing material
             </motion.p>
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {homeData.howItWorks.steps.map((step, index) => {
-              const IconComponent = getIcon(step.icon as any);
-              const ArrowRight = getIcon('ArrowRight');
-              return (
+            {processSteps.map((step, index) => (
+              <motion.div 
+                key={index} 
+                className="relative"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
                 <motion.div 
-                  key={index} 
-                  className="relative"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
+                  className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 h-full text-center"
+                  whileHover={{ 
+                    y: -10,
+                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                  }}
                 >
                   <motion.div 
-                    className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 h-full text-center"
-                    whileHover={{ 
-                      y: -10,
-                      boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
-                    }}
+                    className="bg-gradient-to-r from-emerald-500 to-blue-500 text-white p-4 rounded-full w-fit mx-auto mb-4"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
                   >
-                    <motion.div 
-                      className="bg-gradient-to-r from-emerald-500 to-blue-500 text-white p-4 rounded-full w-fit mx-auto mb-4"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <IconComponent className="h-8 w-8" />
-                    </motion.div>
-                    <motion.h3 
-                      className="text-xl font-semibold text-gray-900 mb-3"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ delay: index * 0.2 + 0.3 }}
-                      viewport={{ once: true }}
-                    >
-                      {step.title}
-                    </motion.h3>
-                    <motion.p 
-                      className="text-gray-600"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ delay: index * 0.2 + 0.4 }}
-                      viewport={{ once: true }}
-                    >
-                      {step.description}
-                    </motion.p>
+                    {step.icon}
                   </motion.div>
-                  {index < homeData.howItWorks.steps.length - 1 && (
-                    <motion.div 
-                      className="hidden lg:block absolute top-12 -right-4 z-10"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.2 + 0.6 }}
-                      viewport={{ once: true }}
-                    >
-                      <motion.div
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                      >
-                        <ArrowRight className="h-8 w-8 text-emerald-400" />
-                      </motion.div>
-                    </motion.div>
-                  )}
+                  <motion.h3 
+                    className="text-xl font-semibold text-gray-900 mb-3"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: index * 0.2 + 0.3 }}
+                    viewport={{ once: true }}
+                  >
+                    {step.title}
+                  </motion.h3>
+                  <motion.p 
+                    className="text-gray-600"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: index * 0.2 + 0.4 }}
+                    viewport={{ once: true }}
+                  >
+                    {step.description}
+                  </motion.p>
                 </motion.div>
-              );
-            })}
+                {index < processSteps.length - 1 && (
+                  <motion.div 
+                    className="hidden lg:block absolute top-12 -right-4 z-10"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.2 + 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <motion.div
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      <ArrowRight className="h-8 w-8 text-emerald-400" />
+                    </motion.div>
+                  </motion.div>
+                )}
+              </motion.div>
+            ))}
           </div>
 
           <motion.div 
@@ -352,10 +403,7 @@ const Home = () => {
                   animate={{ x: [0, 5, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 >
-                  {(() => {
-                    const ArrowRight = getIcon('ArrowRight');
-                    return <ArrowRight className="ml-2 h-5 w-5" />;
-                  })()}
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </motion.div>
               </Link>
             </motion.div>
@@ -387,7 +435,7 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              {homeData.impactStats.title}
+              Our Environmental Impact
             </motion.h2>
             <motion.p 
               className="text-gray-600 max-w-2xl mx-auto"
@@ -396,17 +444,21 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              {homeData.impactStats.subtitle}
+              See the positive change we're creating together in our communities and environment
             </motion.p>
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {homeData.impactStats.stats.map((stat, index) => (
+            {[
+              { end: 10000, suffix: '+', label: 'Bottles Collected', delay: 0.2 },
+              { end: 20, suffix: '+', label: 'Workshops Hosted', delay: 0.4 },
+              { end: 500, suffix: '+', label: 'Community Members', delay: 0.6 }
+            ].map((stat, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50, scale: 0.8 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.6, delay: stat.value * 0.0001 }}
+                transition={{ duration: 0.6, delay: stat.delay }}
                 whileHover={{ 
                   scale: 1.05,
                   boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
@@ -414,12 +466,12 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="text-center p-8 bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl cursor-pointer"
               >
-                <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                <AnimatedCounter end={stat.end} suffix={stat.suffix} />
                 <motion.p 
                   className="text-gray-600 mt-2 font-medium"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  transition={{ delay: stat.value * 0.0001 + 0.3 }}
+                  transition={{ delay: stat.delay + 0.3 }}
                   viewport={{ once: true }}
                 >
                   {stat.label}
@@ -447,7 +499,7 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              {homeData.sponsors.title}
+              Trusted by the Greatest
             </motion.h2>
             <motion.p 
               className="text-gray-600"
@@ -456,12 +508,12 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              {homeData.sponsors.subtitle}
+              Working together with amazing organizations to create a sustainable future
             </motion.p>
           </motion.div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
-            {homeData.sponsors.partners.map((sponsor, index) => (
+            {sponsors.map((sponsor, index) => (
               <motion.div 
                 key={index} 
                 className="text-center p-4 bg-white rounded-lg hover:bg-gray-50 transition-all duration-300 cursor-pointer"
@@ -532,7 +584,7 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            {homeData.callToAction.title}
+            Ready to Make a Difference?
           </motion.h2>
           <motion.p 
             className="text-xl text-emerald-100 mb-8"
@@ -541,7 +593,7 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            {homeData.callToAction.subtitle}
+            Join our community of eco-warriors and help us transform waste into wonder
           </motion.p>
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -550,36 +602,35 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            {homeData.callToAction.buttons.map((button, index) => {
-              const IconComponent = getIcon(button.icon as any);
-              return (
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                to="/contact"
+                className="bg-white text-emerald-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl"
+              >
+                <Users className="mr-2 h-5 w-5" />
+                Join Our Community
+              </Link>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                to="/recycling"
+                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-emerald-600 transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl"
+              >
+                Start Recycling Today
                 <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
                 >
-                  <Link
-                    to={button.link}
-                    className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl ${
-                      button.type === 'primary' 
-                        ? 'bg-white text-emerald-600 hover:bg-gray-50' 
-                        : 'border-2 border-white text-white hover:bg-white hover:text-emerald-600'
-                    }`}
-                  >
-                    <IconComponent className="mr-2 h-5 w-5" />
-                    {button.text}
-                    {button.icon === 'ArrowRight' && (
-                      <motion.div
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                      >
-                        <IconComponent className="ml-2 h-5 w-5" />
-                      </motion.div>
-                    )}
-                  </Link>
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </motion.div>
-              );
-            })}
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>
