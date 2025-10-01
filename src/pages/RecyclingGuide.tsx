@@ -113,23 +113,26 @@ const RecyclingGuide: React.FC = () => {
             })}
           </div>
 
-          {/* DESKTOP: Correct sequence with proper arrows */}
+          {/* DESKTOP: swap bottom items → layout [1,2] / [4,3] */}
           <div className="hidden md:grid md:grid-cols-2 gap-12 relative">
-            {recyclingData.howToRecycle.steps.map((step, index) => {
+            {([0, 1, 3, 2] as const).map((logicalIndex, pos) => {
+              // Use the logical index (original order) for numbering and data,
+              // but place them in the swapped visual positions.
+              const step = recyclingData.howToRecycle.steps[logicalIndex];
               const IconComponent = getIcon(step.icon as any);
               const CheckCircle = getIcon('CheckCircle');
               const ArrowRight = getIcon('ArrowRight');
-              
+
               return (
-                <motion.div 
-                  key={`d-${index}`} 
-                  className="relative" 
+                <motion.div
+                  key={`d-${logicalIndex}`}
+                  className="relative"
                   initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }} 
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: logicalIndex * 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="bg-gray-50 p-8 rounded-xl hover:bg-gray-100 transition-colors h-full"
                     whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0,0,0,0.1)" }}
                   >
@@ -138,12 +141,13 @@ const RecyclingGuide: React.FC = () => {
                         <IconComponent className="h-8 w-8" />
                       </div>
                       <div className="flex-grow">
+                        {/* number uses logicalIndex (the real step number) */}
                         <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                          {`${index + 1}. ${step.title}`}
+                          {`${logicalIndex + 1}. ${step.title}`}
                         </h3>
                         <p className="text-gray-600 mb-4">{step.description}</p>
                         <ul className="space-y-1">
-                          {step.tips?.map((tip, t) => (
+                          {step.tips?.map((tip: string, t: number) => (
                             <li key={t} className="flex items-center text-sm text-gray-500">
                               <CheckCircle className="h-4 w-4 text-emerald-500 mr-2" /> {tip}
                             </li>
@@ -153,19 +157,19 @@ const RecyclingGuide: React.FC = () => {
                     </div>
                   </motion.div>
 
-                  {/* Arrows showing correct sequence: 1→2, 2→3, 3→4 */}
-                  {/* 1 → 2 (horizontal right) */}
-                  {index === 0 && (
-                    <motion.div 
-                      className="absolute top-1/2 -right-6 -translate-y-1/2"
-                      initial={{ opacity: 0, scale: 0 }} 
+                  {/* Arrows for the swapped layout [1,2] / [4,3]:
+                      1 → 2 (right),  2 ↓ 3 (down to bottom-right),  3 ← 4 (left back to bottom-left) */}
+                  {logicalIndex === 0 && (
+                    <motion.div
+                      className="absolute top-1/2 -right-6 -translate-y-1/2 z-10 pointer-events-none"
+                      initial={{ opacity: 0, scale: 0 }}
                       whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.6 }} 
+                      transition={{ delay: 0.6 }}
                       viewport={{ once: true }}
                     >
-                      <motion.div 
-                        className="bg-emerald-500 text-white p-2 rounded-full"
-                        animate={{ x: [0, 5, 0] }} 
+                      <motion.div
+                        className="bg-emerald-500 text-white p-2 rounded-full shadow"
+                        animate={{ x: [0, 5, 0] }}
                         transition={{ duration: 2, repeat: Infinity }}
                       >
                         <ArrowRight className="h-4 w-4" />
@@ -173,18 +177,17 @@ const RecyclingGuide: React.FC = () => {
                     </motion.div>
                   )}
 
-                  {/* 2 → 3 (vertical down) */}
-                  {index === 1 && (
-                    <motion.div 
-                      className="absolute -bottom-6 left-1/2 -translate-x-1/2"
-                      initial={{ opacity: 0, scale: 0 }} 
+                  {logicalIndex === 1 && (
+                    <motion.div
+                      className="absolute -bottom-6 left-1/2 -translate-x-1/2 z-10 pointer-events-none"
+                      initial={{ opacity: 0, scale: 0 }}
                       whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.8 }} 
+                      transition={{ delay: 0.8 }}
                       viewport={{ once: true }}
                     >
-                      <motion.div 
-                        className="bg-emerald-500 text-white p-2 rounded-full"
-                        animate={{ y: [0, 5, 0] }} 
+                      <motion.div
+                        className="bg-emerald-500 text-white p-2 rounded-full shadow"
+                        animate={{ y: [0, 5, 0] }}
                         transition={{ duration: 2, repeat: Infinity }}
                       >
                         <ArrowRight className="h-4 w-4 rotate-90" />
@@ -192,21 +195,21 @@ const RecyclingGuide: React.FC = () => {
                     </motion.div>
                   )}
 
-                  {/* 3 → 4 (horizontal right) */}
-                  {index === 2 && (
-                    <motion.div 
-                      className="absolute top-1/2 -right-6 -translate-y-1/2"
-                      initial={{ opacity: 0, scale: 0 }} 
+                  {logicalIndex === 2 && (
+                    <motion.div
+                      className="absolute top-1/2 -left-6 -translate-y-1/2 z-10 pointer-events-none"
+                      initial={{ opacity: 0, scale: 0 }}
                       whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 1.0 }} 
+                      transition={{ delay: 1.0 }}
                       viewport={{ once: true }}
                     >
-                      <motion.div 
-                        className="bg-emerald-500 text-white p-2 rounded-full"
-                        animate={{ x: [0, 5, 0] }} 
+                      <motion.div
+                        className="bg-emerald-500 text-white p-2 rounded-full shadow"
+                        animate={{ x: [0, -5, 0] }}
                         transition={{ duration: 2, repeat: Infinity }}
                       >
-                        <ArrowRight className="h-4 w-4" />
+                        {/* left arrow */}
+                        <ArrowRight className="h-4 w-4 rotate-180" />
                       </motion.div>
                     </motion.div>
                   )}
@@ -214,6 +217,7 @@ const RecyclingGuide: React.FC = () => {
               );
             })}
           </div>
+
         </div>
       </section>
 
