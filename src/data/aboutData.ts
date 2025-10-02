@@ -72,7 +72,7 @@ export const aboutData = {
     subtitle: "Our commitment to sustainability and innovation has been recognized by leading organizations",
     awards: [
       {
-        title: "Young Technopreneurship Competition 4th Place",
+        title: "Young Technopreneurship Competition",
         description: "Achieved 4th place in the Young Technopreneurship Competition hosted by ASTI (Association of Science, Technology & Innovation, Malaysia), showcasing resilience, innovation, and sustainability.",
         year: "2025",
         icon: "Trophy",
