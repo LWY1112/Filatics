@@ -87,7 +87,7 @@ export const workshopsData = {
         participants: 35,
         feedback: "4.9/5",
         description: "Students competed to create innovative solutions using recycled materials",
-        image: "/images/workshops/eco-innovation-workshop.jpg"
+        image: "https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=400"
       },
       {
         title: "Green Technology Workshop",
@@ -95,7 +95,7 @@ export const workshopsData = {
         participants: 28,
         feedback: "4.8/5",
         description: "Hands-on experience with sustainable technology and green innovations",
-        image: "/images/workshops/green-technology-workshop.jpg"
+        image: "https://images.pexels.com/photos/3184434/pexels-photo-3184434.jpeg?auto=compress&cs=tinysrgb&w=400"
       },
       {
         title: "Community Awareness Drive",
@@ -103,7 +103,7 @@ export const workshopsData = {
         participants: 45,
         feedback: "4.7/5",
         description: "Educational session on plastic pollution and community-based solutions",
-        image: "/images/workshops/community-awareness-workshop.jpg"
+        image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400"
       },
       {
         title: "Sustainable Living Workshop",
@@ -111,7 +111,7 @@ export const workshopsData = {
         participants: 32,
         feedback: "4.8/5",
         description: "Practical tips and strategies for adopting sustainable lifestyle practices",
-        image: "/images/workshops/sustainable-living-workshop.jpg"
+        image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400"
       }
     ]
   },
