@@ -125,7 +125,7 @@ export const recyclingData = {
     buttons: [
       {
         text: "Recycle Now",
-        link: "https://forms.google.com/your-recycling-form",
+        link: "https://chat.whatsapp.com/CNEwMOjVZvt5iqXU3av6Ll",
         type: "primary",
         icon: "Recycle"
       },
