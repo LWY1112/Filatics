@@ -47,24 +47,24 @@ export const contactData = {
     title: "Meet the Team",
     subtitle: "The passionate students behind Filatics, working together to create sustainable solutions",
     members: [
-      {
-        name: "Bryant Yong Yik Hong",
-        role: "CEO",
-        image: "/images/team/bryant.jpg",
-        description: "Environmental Engineering student passionate about sustainable technology and green innovation."
-      },
-      {
-        name: "Ng Ee Zhen",
-        role: "COO", 
-        image: "/images/team/ng-ee-zhen.jpg",
-        description: "Computer Science major specializing in materials processing automation and 3D printing technology."
-      },
-      {
-        name: "Bee Xiang Zi",
-        role: "CMO",
-        image: "/images/team/bee-xiang-zi.jpg",
-        description: "Business student focused on sustainable supply chain management and community outreach."
-      },
+        {
+          name: "Bryant Yong Yik Hong",
+          role: "Chief Executive Officer (CEO), Research and Development",
+          image: "/images/team/bryant.jpg",
+          description: "Mechanical engineering graduate and 3D printing enthusiast, leading innovation and product development at Filatics."
+        },
+        {
+          name: "Ng Ee Zhen",
+          role: "Chief Operating Officer (COO), Research and Development",
+          image: "/images/team/ng-ee-zhen.jpg",
+          description: "Electronics engineer passionate about robotics and microcontrollers, driving process efficiency and technical operations."
+        },
+        {
+          name: "Bee Xiang Zi",
+          role: "Chief Marketing Officer (CMO), Plastic Collection",
+          image: "/images/team/bee-xiang-zi.jpg",
+          description: "Entrepreneurship graduate and sustainability advocate, focusing on marketing, partnerships, and community engagement."
+        },
     ]
   },
 
