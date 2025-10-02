@@ -24,13 +24,10 @@ const Footer = () => {
               <a href="#" className="text-gray-300 hover:text-emerald-400 transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-emerald-400 transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-emerald-400 transition-colors">
+              <a href="https://www.instagram.com/filatics.3d?utm_source=ig_web_button_share_sheet&igsh=MWQzdWh3M2Z5bXV0dw==" className="text-gray-300 hover:text-emerald-400 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-emerald-400 transition-colors">
+              <a href="https://www.linkedin.com/company/filatics2025/?viewAsMember=true" className="text-gray-300 hover:text-emerald-400 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
@@ -69,15 +66,15 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-gray-300">
                 <Mail className="h-4 w-4" />
-                <span>info@filatics.com</span>
+                <span>filatics25@gmail.com</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-300">
                 <Phone className="h-4 w-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+6016-3589385</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-300">
                 <MapPin className="h-4 w-4" />
-                <span>Your City, Country</span>
+                <span>Kuala Lumpur, Malaysia </span>
               </div>
             </div>
           </div>
