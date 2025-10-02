@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { workshopsData } from '../data/workshopsData';
 import { getIcon } from '../utils/iconMapper';
 
@@ -284,20 +285,37 @@ const Workshops = () => {
             {workshopsData.callToAction.buttons.map((button, index) => {
               const IconComponent = button.icon ? getIcon(button.icon as any) : null;
               return (
-                <motion.a
+                <motion.div
                   key={index}
-                  href={button.link}
-                  className={`px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center shadow-lg hover:shadow-xl ${
-                    button.type === 'primary' 
-                      ? 'bg-white text-emerald-600 hover:bg-gray-50' 
-                      : 'border-2 border-white text-white hover:bg-white hover:text-emerald-600'
-                  }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  {button.text}
-                  {IconComponent && <IconComponent className="ml-2 h-5 w-5" />}
-                </motion.a>
+                  {button.link.startsWith('/') ? (
+                    <Link
+                      to={button.link}
+                      className={`px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center shadow-lg hover:shadow-xl ${
+                        button.type === 'primary' 
+                          ? 'bg-white text-emerald-600 hover:bg-gray-50' 
+                          : 'border-2 border-white text-white hover:bg-white hover:text-emerald-600'
+                      }`}
+                    >
+                      {button.text}
+                      {IconComponent && <IconComponent className="ml-2 h-5 w-5" />}
+                    </Link>
+                  ) : (
+                    <a
+                      href={button.link}
+                      className={`px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center shadow-lg hover:shadow-xl ${
+                        button.type === 'primary' 
+                          ? 'bg-white text-emerald-600 hover:bg-gray-50' 
+                          : 'border-2 border-white text-white hover:bg-white hover:text-emerald-600'
+                      }`}
+                    >
+                      {button.text}
+                      {IconComponent && <IconComponent className="ml-2 h-5 w-5" />}
+                    </a>
+                  )}
+                </motion.div>
               );
             })}
           </motion.div>

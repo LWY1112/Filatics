@@ -1,5 +1,6 @@
 import AnimatedCounter from '../components/AnimatedCounter';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { aboutData } from '../data/aboutData';
 import { getIcon } from '../utils/iconMapper';
 
@@ -269,19 +270,35 @@ const About = () => {
             viewport={{ once: true }}
           >
             {aboutData.callToAction.buttons.map((button, index) => (
-              <motion.a
+              <motion.div
                 key={index}
-                href={button.link}
-                className={`px-8 py-3 rounded-lg font-semibold transition-colors ${
-                  button.type === 'primary' 
-                    ? 'bg-white text-emerald-600 hover:bg-gray-50' 
-                    : 'border-2 border-white text-white hover:bg-white hover:text-emerald-600'
-                }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {button.text}
-              </motion.a>
+                {button.link.startsWith('/') ? (
+                  <Link
+                    to={button.link}
+                    className={`px-8 py-3 rounded-lg font-semibold transition-colors inline-block ${
+                      button.type === 'primary' 
+                        ? 'bg-white text-emerald-600 hover:bg-gray-50' 
+                        : 'border-2 border-white text-white hover:bg-white hover:text-emerald-600'
+                    }`}
+                  >
+                    {button.text}
+                  </Link>
+                ) : (
+                  <a
+                    href={button.link}
+                    className={`px-8 py-3 rounded-lg font-semibold transition-colors inline-block ${
+                      button.type === 'primary' 
+                        ? 'bg-white text-emerald-600 hover:bg-gray-50' 
+                        : 'border-2 border-white text-white hover:bg-white hover:text-emerald-600'
+                    }`}
+                  >
+                    {button.text}
+                  </a>
+                )}
+              </motion.div>
             ))}
           </motion.div>
         </div>
