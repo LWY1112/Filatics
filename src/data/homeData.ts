@@ -4,7 +4,6 @@ export const homeData = {
     subtitle: "Filatics is a green startup dedicated to fighting plastic pollution by transforming everyday waste into high-quality 3D printing filament. Join us in building a smarter, greener future.",
     buttonText: "Recycle Now",
     buttonLink: "/recycling",
-    heroImage: images.hero.home,
     heroImage: "/images/hero/home-hero.jpg",
     heroImageAlt: "3D Printing with Recycled Filament"
   },

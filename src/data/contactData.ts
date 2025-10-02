@@ -29,7 +29,6 @@ export const contactData = {
         icon: "Send"
       }
     ],
-    communityImage: images.hero.community,
     communityImage: "/images/hero/community.jpg",
     communityImageAlt: "Community members working together"
   },

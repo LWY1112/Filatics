@@ -2,7 +2,6 @@ export const aboutData = {
   hero: {
     title: "About Filatics",
     subtitle: "Filatics began as a student-led initiative with a single purpose: to fight plastic waste. What started as a small idea quickly grew into a mission — turning discarded plastic bottles into innovative solutions for the future.",
-    heroImage: images.hero.about,
     heroImage: "/images/hero/about-hero.jpg",
     heroImageAlt: "Students working on recycling project"
   },
