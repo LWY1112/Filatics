@@ -83,7 +83,7 @@ export const homeData = {
     partners: [
       {
         name: 'BizPod',
-        logo: "/images/sponsors/Bizpod.png"
+        logo: "/images/awards/Bizpod.png"
       },
       {
         name: 'Taylors University',
