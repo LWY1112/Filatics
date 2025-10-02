@@ -1,5 +1,3 @@
-import { images } from './images';
-
 export const homeData = {
   hero: {
     title: "Turning Plastic Waste Into 3D Printing Filament",
@@ -7,6 +5,7 @@ export const homeData = {
     buttonText: "Recycle Now",
     buttonLink: "/recycling",
     heroImage: images.hero.home,
+    heroImage: "/images/hero/home-hero.jpg",
     heroImageAlt: "3D Printing with Recycled Filament"
   },
   
@@ -85,27 +84,27 @@ export const homeData = {
     partners: [
       {
         name: 'EcoTech Solutions',
-        logo: images.sponsors.ecoTech
+        logo: "/images/sponsors/eco-tech-logo.png"
       },
       {
         name: 'Green Future Fund',
-        logo: images.sponsors.greenFuture
+        logo: "/images/sponsors/green-future-logo.png"
       },
       {
         name: 'Sustainable Innovations',
-        logo: images.sponsors.sustainableInnovations
+        logo: "/images/sponsors/sustainable-innovations-logo.png"
       },
       {
         name: 'Planet First Initiative',
-        logo: images.sponsors.planetFirst
+        logo: "/images/sponsors/planet-first-logo.png"
       },
       {
         name: 'Innovation Hub KL',
-        logo: images.sponsors.innovationHub
+        logo: "/images/sponsors/innovation-hub-logo.png"
       },
       {
         name: 'Green Tech Malaysia',
-        logo: images.sponsors.greenTechMalaysia
+        logo: "/images/sponsors/green-tech-malaysia-logo.png"
       }
     ]
   },

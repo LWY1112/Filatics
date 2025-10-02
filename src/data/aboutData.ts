@@ -1,10 +1,9 @@
-import { images } from './images';
-
 export const aboutData = {
   hero: {
     title: "About Filatics",
     subtitle: "Filatics began as a student-led initiative with a single purpose: to fight plastic waste. What started as a small idea quickly grew into a mission — turning discarded plastic bottles into innovative solutions for the future.",
     heroImage: images.hero.about,
+    heroImage: "/images/hero/about-hero.jpg",
     heroImageAlt: "Students working on recycling project"
   },
 
@@ -78,14 +77,14 @@ export const aboutData = {
         description: "Achieved 4th place in the Young Technopreneurship Competition hosted by ASTI (Association of Science, Technology & Innovation, Malaysia), showcasing resilience, innovation, and sustainability.",
         year: "2025",
         icon: "Trophy",
-        image: images.awards.technopreneurship
+        image: "/images/awards/technopreneurship-award.jpg"
       },
       {
         title: "Taylors University BizPod Grant",
         description: "Awarded RM10,000 in seed funding through Taylors University BizPod Grant program, recognizing Filatics as one of the top three promising student startups driving sustainability and innovation.",
         year: "2025",
         icon: "Trophy",
-        image: images.awards.bizpodGrant
+        image: "/images/awards/bizpod-grant-award.jpg"
       }
     ]
   },

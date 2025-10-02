@@ -1,5 +1,3 @@
-import { images } from './images';
-
 export const workshopsData = {
   hero: {
     title: "Educational Workshops",
@@ -89,7 +87,7 @@ export const workshopsData = {
         participants: 35,
         feedback: "4.9/5",
         description: "Students competed to create innovative solutions using recycled materials",
-        image: images.workshops.ecoInnovation
+        image: "/images/workshops/eco-innovation-workshop.jpg"
       },
       {
         title: "Green Technology Workshop",
@@ -97,7 +95,7 @@ export const workshopsData = {
         participants: 28,
         feedback: "4.8/5",
         description: "Hands-on experience with sustainable technology and green innovations",
-        image: images.workshops.greenTechnology
+        image: "/images/workshops/green-technology-workshop.jpg"
       },
       {
         title: "Community Awareness Drive",
@@ -105,7 +103,7 @@ export const workshopsData = {
         participants: 45,
         feedback: "4.7/5",
         description: "Educational session on plastic pollution and community-based solutions",
-        image: images.workshops.communityAwareness
+        image: "/images/workshops/community-awareness-workshop.jpg"
       },
       {
         title: "Sustainable Living Workshop",
@@ -113,7 +111,7 @@ export const workshopsData = {
         participants: 32,
         feedback: "4.8/5",
         description: "Practical tips and strategies for adopting sustainable lifestyle practices",
-        image: images.workshops.sustainableLiving
+        image: "/images/workshops/sustainable-living-workshop.jpg"
       }
     ]
   },

@@ -1,5 +1,3 @@
-import { images } from './images';
-
 export const contactData = {
   hero: {
     title: "Be Part of the Movement",
@@ -32,6 +30,7 @@ export const contactData = {
       }
     ],
     communityImage: images.hero.community,
+    communityImage: "/images/hero/community.jpg",
     communityImageAlt: "Community members working together"
   },
 
@@ -52,19 +51,19 @@ export const contactData = {
       {
         name: "Bryant Yong Yik Hong",
         role: "CEO",
-        image: images.team.bryant,
+        image: "/images/team/bryant.jpg",
         description: "Environmental Engineering student passionate about sustainable technology and green innovation."
       },
       {
         name: "Ng Ee Zhen",
         role: "COO", 
-        image: images.team.ngEeZhen,
+        image: "/images/team/ng-ee-zhen.jpg",
         description: "Computer Science major specializing in materials processing automation and 3D printing technology."
       },
       {
         name: "Bee Xiang Zi",
         role: "CMO",
-        image: images.team.beeXiangZi,
+        image: "/images/team/bee-xiang-zi.jpg",
         description: "Business student focused on sustainable supply chain management and community outreach."
       },
     ]
