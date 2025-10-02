@@ -76,7 +76,7 @@ export const aboutData = {
         description: "Achieved 4th place in the Young Technopreneurship Competition hosted by ASTI (Association of Science, Technology & Innovation, Malaysia), showcasing resilience, innovation, and sustainability.",
         year: "2025",
         icon: "Trophy",
-        image: "/images/awards/technopreneurship-award.jpg"
+        image: "/images/awards/YTC.png"
       },
       {
         title: "Taylors University BizPod Grant",
