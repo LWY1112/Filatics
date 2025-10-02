@@ -38,9 +38,8 @@ export const contactData = {
     subtitle: "Follow us to stay updated with our latest projects and events",
     platforms: [
       { name: "Facebook", icon: "Facebook", link: "#", color: "hover:text-blue-600" },
-      { name: "Instagram", icon: "Instagram", link: "#", color: "hover:text-pink-600" },
-      { name: "LinkedIn", icon: "Linkedin", link: "#", color: "hover:text-blue-700" },
-      { name: "Twitter", icon: "Twitter", link: "#", color: "hover:text-blue-400" }
+      { name: "Instagram", icon: "Instagram", link: "https://www.instagram.com/filatics.3d?utm_source=ig_web_button_share_sheet&igsh=MWQzdWh3M2Z5bXV0dw==", color: "hover:text-pink-600" },
+      { name: "LinkedIn", icon: "Linkedin", link: "https://www.linkedin.com/company/filatics2025/?viewAsMember=true", color: "hover:text-blue-700" },
     ]
   },
 
@@ -49,29 +48,23 @@ export const contactData = {
     subtitle: "The passionate students behind Filatics, working together to create sustainable solutions",
     members: [
       {
-        name: "Alex Johnson",
-        role: "Founder & CEO",
+        name: "Bryant Yong Yik Hong",
+        role: "CEO",
         image: "https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=400",
         description: "Environmental Engineering student passionate about sustainable technology and green innovation."
       },
       {
-        name: "Sarah Chen",
-        role: "CTO & Co-founder", 
+        name: "Ng Ee Zhen",
+        role: "COO", 
         image: "https://images.pexels.com/photos/2599537/pexels-photo-2599537.jpeg?auto=compress&cs=tinysrgb&w=400",
         description: "Computer Science major specializing in materials processing automation and 3D printing technology."
       },
       {
-        name: "Marcus Rodriguez",
-        role: "Operations Manager",
+        name: "Bee Xiang Zi",
+        role: "CMO",
         image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400",
         description: "Business student focused on sustainable supply chain management and community outreach."
       },
-      {
-        name: "Emma Thompson",
-        role: "Community Outreach",
-        image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400",
-        description: "Communications major dedicated to environmental education and building sustainable communities."
-      }
     ]
   },
 
@@ -80,14 +73,14 @@ export const contactData = {
     details: [
       {
         type: "Email",
-        value: "info@filatics.com",
-        link: "mailto:info@filatics.com",
+        value: "filatics25@gmail.com",
+        link: "mailto:filatics25@gmail.com",
         icon: "Mail"
       },
       {
         type: "Phone", 
-        value: "+60 12-345 6789",
-        link: "tel:+60123456789",
+        value: "+60 16-3589385",
+        link: "tel:+60163589385",
         icon: "Phone"
       },
       {
@@ -142,7 +135,7 @@ export const contactData = {
       text: "Send Message",
       icon: "Send"
     },
-    companyEmail: "info@filatics.com"
+    companyEmail: "filatics25@gmail.com"
   },
 
   callToAction: {
@@ -156,7 +149,7 @@ export const contactData = {
       },
       {
         text: "WhatsApp Us",
-        link: "https://wa.me/60123456789",
+        link: "https://wa.me/60163589385",
         type: "secondary"
       }
     ]
