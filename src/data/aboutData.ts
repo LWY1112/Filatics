@@ -72,22 +72,16 @@ export const aboutData = {
     subtitle: "Our commitment to sustainability and innovation has been recognized by leading organizations",
     awards: [
       {
-        title: "2024 Green Innovation Award",
-        description: "Recognized for pioneering solutions in recycling technology and sustainable innovation.",
-        year: "2024",
+        title: "Young Technopreneurship Competition 4th Place",
+        description: "Achieved 4th place in the Young Technopreneurship Competition hosted by ASTI (Association of Science, Technology & Innovation, Malaysia), showcasing resilience, innovation, and sustainability.",
+        year: "2025",
         icon: "Trophy"
       },
       {
-        title: "Best Student-Led Startup 2023",
-        description: "Awarded by leading institutions for outstanding entrepreneurship and environmental impact.",
-        year: "2023", 
-        icon: "Star"
-      },
-      {
-        title: "Eco Impact Recognition",
-        description: "Honored for positive environmental contribution and community engagement in Southeast Asia.",
-        year: "2023",
-        icon: "Globe"
+        title: "Taylors University BizPod Grant",
+        description: "Awarded RM10,000 in seed funding through Taylors University BizPod Grant program, recognizing Filatics as one of the top three promising student startups driving sustainability and innovation.",
+        year: "2025",
+        icon: "Trophy"
       }
     ]
   },
