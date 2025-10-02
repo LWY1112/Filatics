@@ -1,3 +1,5 @@
+import { images } from './images';
+
 export const contactData = {
   hero: {
     title: "Be Part of the Movement",
@@ -29,7 +31,7 @@ export const contactData = {
         icon: "Send"
       }
     ],
-    communityImage: "https://images.pexels.com/photos/3184434/pexels-photo-3184434.jpeg?auto=compress&cs=tinysrgb&w=800",
+    communityImage: images.hero.community,
     communityImageAlt: "Community members working together"
   },
 
@@ -50,19 +52,19 @@ export const contactData = {
       {
         name: "Bryant Yong Yik Hong",
         role: "CEO",
-        image: "https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: images.team.bryant,
         description: "Environmental Engineering student passionate about sustainable technology and green innovation."
       },
       {
         name: "Ng Ee Zhen",
         role: "COO", 
-        image: "https://images.pexels.com/photos/2599537/pexels-photo-2599537.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: images.team.ngEeZhen,
         description: "Computer Science major specializing in materials processing automation and 3D printing technology."
       },
       {
         name: "Bee Xiang Zi",
         role: "CMO",
-        image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: images.team.beeXiangZi,
         description: "Business student focused on sustainable supply chain management and community outreach."
       },
     ]

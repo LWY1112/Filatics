@@ -1,10 +1,12 @@
+import { images } from './images';
+
 export const homeData = {
   hero: {
     title: "Turning Plastic Waste Into 3D Printing Filament",
     subtitle: "Filatics is a green startup dedicated to fighting plastic pollution by transforming everyday waste into high-quality 3D printing filament. Join us in building a smarter, greener future.",
     buttonText: "Recycle Now",
     buttonLink: "/recycling",
-    heroImage: "https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800",
+    heroImage: images.hero.home,
     heroImageAlt: "3D Printing with Recycled Filament"
   },
   
@@ -81,12 +83,30 @@ export const homeData = {
     title: "Trusted by the Greatest",
     subtitle: "Working together with amazing organizations to create a sustainable future",
     partners: [
-      'EcoTech Solutions',
-      'Green Future Fund', 
-      'Sustainable Innovations',
-      'Planet First Initiative',
-      'Innovation Hub KL',
-      'Green Tech Malaysia'
+      {
+        name: 'EcoTech Solutions',
+        logo: images.sponsors.ecoTech
+      },
+      {
+        name: 'Green Future Fund',
+        logo: images.sponsors.greenFuture
+      },
+      {
+        name: 'Sustainable Innovations',
+        logo: images.sponsors.sustainableInnovations
+      },
+      {
+        name: 'Planet First Initiative',
+        logo: images.sponsors.planetFirst
+      },
+      {
+        name: 'Innovation Hub KL',
+        logo: images.sponsors.innovationHub
+      },
+      {
+        name: 'Green Tech Malaysia',
+        logo: images.sponsors.greenTechMalaysia
+      }
     ]
   },
 

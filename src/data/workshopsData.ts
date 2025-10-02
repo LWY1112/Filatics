@@ -1,3 +1,5 @@
+import { images } from './images';
+
 export const workshopsData = {
   hero: {
     title: "Educational Workshops",
@@ -87,7 +89,7 @@ export const workshopsData = {
         participants: 35,
         feedback: "4.9/5",
         description: "Students competed to create innovative solutions using recycled materials",
-        image: "https://images.pexels.com/photos/3184434/pexels-photo-3184434.jpeg?auto=compress&cs=tinysrgb&w=400"
+        image: images.workshops.ecoInnovation
       },
       {
         title: "Green Technology Workshop",
@@ -95,7 +97,7 @@ export const workshopsData = {
         participants: 28,
         feedback: "4.8/5",
         description: "Hands-on experience with sustainable technology and green innovations",
-        image: "https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=400"
+        image: images.workshops.greenTechnology
       },
       {
         title: "Community Awareness Drive",
@@ -103,7 +105,7 @@ export const workshopsData = {
         participants: 45,
         feedback: "4.7/5",
         description: "Educational session on plastic pollution and community-based solutions",
-        image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400"
+        image: images.workshops.communityAwareness
       },
       {
         title: "Sustainable Living Workshop",
@@ -111,7 +113,7 @@ export const workshopsData = {
         participants: 32,
         feedback: "4.8/5",
         description: "Practical tips and strategies for adopting sustainable lifestyle practices",
-        image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400"
+        image: images.workshops.sustainableLiving
       }
     ]
   },

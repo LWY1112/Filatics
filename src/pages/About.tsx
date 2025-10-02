@@ -208,7 +208,6 @@ const About = () => {
           
           <div className="flex flex-wrap justify-center gap-8">
             {aboutData.awards.awards.map((award, index) => {
-              const IconComponent = getIcon(award.icon as any);
               return (
                 <motion.div 
                   key={index} 
@@ -222,13 +221,13 @@ const About = () => {
                   }}
                   viewport={{ once: true }}
                 >
-                  <motion.div 
-                    className="text-emerald-600 mb-4 flex justify-center"
+                  <motion.img
+                    src={award.image}
+                    alt={`${award.title} award`}
+                    className="h-20 w-20 object-cover rounded-lg mx-auto mb-4 shadow-md"
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
-                  >
-                    <IconComponent className="h-12 w-12" />
-                  </motion.div>
+                  />
                   <div className="bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-medium mb-4 w-fit mx-auto">
                     {award.year}
                   </div>

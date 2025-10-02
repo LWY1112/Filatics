@@ -463,10 +463,10 @@ const Home = () => {
           </motion.div>
           
           <div className="flex flex-wrap justify-center gap-6 items-center">
-            {homeData.sponsors.partners.map((sponsor, index) => (
+            {homeData.sponsors.partners.map((partner, index) => (
               <motion.div 
                 key={index} 
-                className="text-center p-4 bg-white rounded-lg hover:bg-gray-50 transition-all duration-300 cursor-pointer w-32"
+                className="text-center p-4 bg-white rounded-lg hover:bg-gray-50 transition-all duration-300 cursor-pointer w-40"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -476,21 +476,21 @@ const Home = () => {
                 }}
                 viewport={{ once: true }}
               >
-                <motion.div 
-                  className="h-12 w-12 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full mx-auto mb-2 flex items-center justify-center"
+                <motion.img
+                  src={partner.logo}
+                  alt={`${partner.name} logo`}
+                  className="h-16 w-16 object-cover rounded-lg mx-auto mb-3 shadow-sm"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
-                >
-                  <span className="text-white font-bold text-sm">{sponsor.charAt(0)}</span>
-                </motion.div>
+                />
                 <motion.p 
-                  className="text-gray-700 font-medium text-xs"
+                  className="text-gray-700 font-medium text-sm"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: index * 0.1 + 0.3 }}
                   viewport={{ once: true }}
                 >
-                  {sponsor}
+                  {partner.name}
                 </motion.p>
               </motion.div>
             ))}
