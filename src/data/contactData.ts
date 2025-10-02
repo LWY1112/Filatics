@@ -49,19 +49,19 @@ export const contactData = {
     members: [
         {
           name: "Bryant Yong Yik Hong",
-          role: "Chief Executive Officer (CEO), Research and Development",
+          role: "Chief Executive Officer (CEO)",
           image: "/images/team/bryant.jpg",
           description: "Mechanical engineering graduate and 3D printing enthusiast, leading innovation and product development at Filatics."
         },
         {
           name: "Ng Ee Zhen",
-          role: "Chief Operating Officer (COO), Research and Development",
+          role: "Chief Operating Officer (COO)",
           image: "/images/team/ng-ee-zhen.jpg",
           description: "Electronics engineer passionate about robotics and microcontrollers, driving process efficiency and technical operations."
         },
         {
           name: "Bee Xiang Zi",
-          role: "Chief Marketing Officer (CMO), Plastic Collection",
+          role: "Chief Marketing Officer (CMO)",
           image: "/images/team/bee-xiang-zi.jpg",
           description: "Entrepreneurship graduate and sustainability advocate, focusing on marketing, partnerships, and community engagement."
         },
