@@ -29,7 +29,7 @@ export const contactData = {
         icon: "Send"
       }
     ],
-    communityImage: "/images/hero/community.jpg",
+    communityImage: "/images/hero/Community.jpg",
     communityImageAlt: "Community members working together"
   },
 
