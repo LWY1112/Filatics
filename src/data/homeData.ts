@@ -4,7 +4,7 @@ export const homeData = {
     subtitle: "Filatics is a green startup dedicated to fighting plastic pollution by transforming everyday waste into high-quality 3D printing filament. Join us in building a smarter, greener future.",
     buttonText: "Recycle Now",
     buttonLink: "/recycling",
-    heroImage: "/images/hero/home-hero.jpg",
+    heroImage: "https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800",
     heroImageAlt: "3D Printing with Recycled Filament"
   },
   
@@ -82,28 +82,12 @@ export const homeData = {
     subtitle: "Working together with amazing organizations to create a sustainable future",
     partners: [
       {
-        name: 'EcoTech Solutions',
-        logo: "/images/sponsors/eco-tech-logo.png"
+        name: 'BizPod',
+        logo: "/images/sponsors/Bizpod.png"
       },
       {
-        name: 'Green Future Fund',
-        logo: "/images/sponsors/green-future-logo.png"
-      },
-      {
-        name: 'Sustainable Innovations',
-        logo: "/images/sponsors/sustainable-innovations-logo.png"
-      },
-      {
-        name: 'Planet First Initiative',
-        logo: "/images/sponsors/planet-first-logo.png"
-      },
-      {
-        name: 'Innovation Hub KL',
-        logo: "/images/sponsors/innovation-hub-logo.png"
-      },
-      {
-        name: 'Green Tech Malaysia',
-        logo: "/images/sponsors/green-tech-malaysia-logo.png"
+        name: 'Taylors University',
+        logo: "/images/sponsors/Taylors.png"
       }
     ]
   },
