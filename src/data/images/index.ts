@@ -1,41 +1,41 @@
-// Image paths for easy management
+// Local image paths for easy management
 export const images = {
-  // Hero and main images
+  // Hero and main images - store in public/images/hero/
   hero: {
-    home: "https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800",
-    about: "https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800",
-    community: "https://images.pexels.com/photos/3184434/pexels-photo-3184434.jpeg?auto=compress&cs=tinysrgb&w=800"
+    home: "/images/hero/home-hero.jpg",
+    about: "/images/hero/about-hero.jpg",
+    community: "/images/hero/community.jpg"
   },
 
-  // Team member photos
+  // Team member photos - store in public/images/team/
   team: {
-    bryant: "https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=400",
-    ngEeZhen: "https://images.pexels.com/photos/2599537/pexels-photo-2599537.jpeg?auto=compress&cs=tinysrgb&w=400",
-    beeXiangZi: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400"
+    bryant: "/images/team/bryant.jpg",
+    ngEeZhen: "/images/team/ng-ee-zhen.jpg",
+    beeXiangZi: "/images/team/bee-xiang-zi.jpg"
   },
 
-  // Sponsor logos
+  // Sponsor logos - store in public/images/sponsors/
   sponsors: {
-    ecoTech: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=200",
-    greenFuture: "https://images.pexels.com/photos/3184434/pexels-photo-3184434.jpeg?auto=compress&cs=tinysrgb&w=200",
-    sustainableInnovations: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=200",
-    planetFirst: "https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=200",
-    innovationHub: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=200",
-    greenTechMalaysia: "https://images.pexels.com/photos/3184434/pexels-photo-3184434.jpeg?auto=compress&cs=tinysrgb&w=200"
+    ecoTech: "/images/sponsors/eco-tech-logo.png",
+    greenFuture: "/images/sponsors/green-future-logo.png",
+    sustainableInnovations: "/images/sponsors/sustainable-innovations-logo.png",
+    planetFirst: "/images/sponsors/planet-first-logo.png",
+    innovationHub: "/images/sponsors/innovation-hub-logo.png",
+    greenTechMalaysia: "/images/sponsors/green-tech-malaysia-logo.png"
   },
 
-  // Award images
+  // Award images - store in public/images/awards/
   awards: {
-    technopreneurship: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=300",
-    bizpodGrant: "https://images.pexels.com/photos/3184434/pexels-photo-3184434.jpeg?auto=compress&cs=tinysrgb&w=300"
+    technopreneurship: "/images/awards/technopreneurship-award.jpg",
+    bizpodGrant: "/images/awards/bizpod-grant-award.jpg"
   },
 
-  // Workshop images
+  // Workshop images - store in public/images/workshops/
   workshops: {
-    ecoInnovation: "https://images.pexels.com/photos/3184434/pexels-photo-3184434.jpeg?auto=compress&cs=tinysrgb&w=400",
-    greenTechnology: "https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=400",
-    communityAwareness: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400",
-    sustainableLiving: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400"
+    ecoInnovation: "/images/workshops/eco-innovation-workshop.jpg",
+    greenTechnology: "/images/workshops/green-technology-workshop.jpg",
+    communityAwareness: "/images/workshops/community-awareness-workshop.jpg",
+    sustainableLiving: "/images/workshops/sustainable-living-workshop.jpg"
   }
 };
 
