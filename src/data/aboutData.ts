@@ -83,7 +83,7 @@ export const aboutData = {
         description: "Awarded RM10,000 in seed funding through Taylors University BizPod Grant program, recognizing Filatics as one of the top three promising student startups driving sustainability and innovation.",
         year: "2025",
         icon: "Trophy",
-        image: "/images/awards/bizpod-grant-award.jpg"
+        image: "/images/awards/Bizpod.png"
       }
     ]
   },
