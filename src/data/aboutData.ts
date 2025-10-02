@@ -95,7 +95,7 @@ export const aboutData = {
       {
         text: "Get Involved Today",
         link: "/contact",
-        type: "primary"
+        type: "primary",
       },
       {
         text: "Attend a Workshop",
