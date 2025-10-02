@@ -89,18 +89,20 @@ export const aboutData = {
   },
 
   callToAction: {
-    title: "Join Our Mission",
-    subtitle: "Be part of the solution. Help us create a more sustainable future for generations to come.",
+    title: "Ready to Make a Difference?",
+    subtitle: "Join our community of eco-warriors and help us transform waste into wonder",
     buttons: [
       {
-        text: "Get Involved Today",
+        text: "Join Our Community",
         link: "/contact",
         type: "primary",
+        icon: "Users"
       },
       {
-        text: "Attend a Workshop",
-        link: "/workshops", 
-        type: "secondary"
+        text: "Start Recycling Today", 
+        link: "/recycling",
+        type: "secondary",
+        icon: "ArrowRight"
       }
     ]
   }
