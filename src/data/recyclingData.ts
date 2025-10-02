@@ -131,7 +131,7 @@ export const recyclingData = {
       },
       {
         text: "WhatsApp Us",
-        link: "https://wa.me/60123456789",
+        link: "https://wa.me/60163589385",
         type: "secondary",
         icon: "ArrowRight"
       }
