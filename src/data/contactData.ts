@@ -51,7 +51,7 @@ export const contactData = {
           name: "Bryant Yong Yik Hong",
           role: "Chief Executive Officer (CEO)",
           image: "/images/team/bryant.jpg",
-          description: "Mechanical engineering graduate and 3D printing enthusiast, leading innovation and product development at Filatics."
+          description: "Mechanical engineering student and 3D printing enthusiast, leading innovation and product development at Filatics."
         },
         {
           name: "Ng Ee Zhen",
@@ -63,7 +63,7 @@ export const contactData = {
           name: "Bee Xiang Zi",
           role: "Chief Marketing Officer (CMO)",
           image: "/images/team/bee-xiang-zi.jpg",
-          description: "Entrepreneurship graduate and sustainability advocate, focusing on marketing, partnerships, and community engagement."
+          description: "Entrepreneurship student and sustainability advocate, focusing on marketing, partnerships, and community engagement."
         },
     ]
   },
