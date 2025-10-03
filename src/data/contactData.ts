@@ -62,7 +62,7 @@ export const contactData = {
         {
           name: "Bee Xiang Zi",
           role: "Chief Marketing Officer (CMO)",
-          image: "/images/team/bee-xiang-zi.jpg",
+          image: "/images/team/BeeXiangZi.jpg",
           description: "Entrepreneurship student and sustainability advocate, focusing on marketing, partnerships, and community engagement."
         },
     ]
